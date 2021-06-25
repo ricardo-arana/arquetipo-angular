@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<p>home works!</p>
+
+<div class="list-group" *ngIf="!loading; else spinner">
+    <app-card *ngFor="let user of listUsers" [avatar]="user.avatarUrl" >
+        <h4><b>{{ user.getFullname() }}</b></h4>
+        <p>{{ user.email }}</p>
+    </app-card>
+</div>
+
+
+<ng-template #spinner>
+    cargando
+    <app-spinner></app-spinner>
+</ng-template>
